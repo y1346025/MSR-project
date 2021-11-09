@@ -3,7 +3,8 @@
 MSR計畫為各縣市政府與當地大學合作聯合推動當地觀光的計畫。我們將與宜蘭縣政府合作，讓在地文化及地理知識等設計成應用程式類型之問答遊戲，並提供QR code與遊客互動，推廣頭城、宜蘭、及蘭陽博物館等地方。
 
 >### 下圖為最初設計概念
-![image](https://user-images.githubusercontent.com/62140029/140934108-d9b0d3ee-7d78-4e00-bb0f-6281e90862f4.png)
+><img src="https://user-images.githubusercontent.com/62140029/140934108-d9b0d3ee-7d78-4e00-bb0f-6281e90862f4.png" alt="Cover" width="50%"/>
+
 
 * 設計成單人遊玩，以呈現文字敘述、影像或影片等方式進行問答。
 * 遊玩方式:下載APP、到指定地點掃QR code後會出現題目(任務)，完成後會指引去下個地點、以此類推。
