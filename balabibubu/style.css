@@ -1,0 +1,48 @@
+*{
+	display:block; 
+}
+
+body{
+		background-color: #fce5cdff;
+}
+
+.Header{
+	font-size:54px;
+	//background-color:pink;
+	width:70%;
+	margin:0 auto;
+	align-items:center;
+	word-wrap:break-word;
+	text-align: center;
+}
+
+.Paragraph{
+	padding: 2px;
+	font-size:38px;
+	word-wrap:break-word;
+	width:50%;
+	margin:0 auto;
+	text-align:justify-all;
+	//background-color: red;
+	margin-top: 5px;
+}
+
+img{
+	padding-top: 10px;
+	justify-content:center;
+	margin: 0px auto;
+	height: 200px;
+}
+
+.AnyButton{
+	padding-top: 20px;
+}
+button{
+	font-size: 20pt;
+	width: 450px;
+	height: 50px;
+	background-color: #ffffff;
+	margin: 0px auto;
+	justify-content:center;
+	text-align: left;
+}
