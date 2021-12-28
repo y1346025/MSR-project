@@ -1,0 +1,33 @@
+body{
+	background-color: lightblue;
+	
+}
+.Paragraph{
+	width:70% ;
+	margin: 30px auto;
+	word-wrap: break-word;
+	border: 7px solid black;
+	border-radius: 5px;
+	padding: 25px 50px 75px 100px;
+	
+}
+h2{
+	background-color: yellow;
+	width: 850px;
+	margin: auto;
+}
+*{
+	text-align: center;
+	margin: 15px;
+}
+.AnyButton{
+	text-align: center;
+	height: 15px;
+	width: 300px;
+	margin: 30px auto;
+}
+button{
+	text-align: center;
+	width: 200px;
+	margin: 30px auto;
+}
