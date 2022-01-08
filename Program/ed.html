@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Editor</title>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/editorjs-button@1.0.3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+	<script>
+		function imgFileHandler(file) {
+			return new Promise((res, rej) => {
+				let reader = new FileReader();
+				reader.onload = () => { return res(reader.result); }
+				reader.onerror = rej;
+				reader.readAsDataURL(file);
+			});
+		}
+
+		var editor = null;
+
+		function startup() {
+			editor = new EditorJS({
+				holder: 'editorjs',
+				tools: {
+					image: {
+						class: ImageTool,
+						config: {
+							uploader: {
+								uploadByFile(file) {
+									return imgFileHandler(file).then((data) => {
+										return { success: 1, file: {url: data}}
+									})
+								}
+							}
+						}
+					},
+					AnyButton: {
+						class: AnyButton,
+						inlineToolbar: false,
+						config:{
+							css:{
+								"btnColor": "btn--gray",
+							}
+						}
+					},
+					header:{
+						class: Header,
+						config:{
+							placeholder: 'Enter a header',
+							levels: [2, 3, 4],
+							defautlevel: 3
+						}
+					}
+				}
+			});
+		}
+
+		function save() {
+			editor.save().then((outputData) => {
+				let dl = document.createElement('a');
+				console.log(JSON.stringify(outputData));
+				dl.setAttribute('href', 'data:text/plain;base64,'+btoa(unescape(encodeURIComponent(JSON.stringify(outputData, null, '\t')))));
+				dl.setAttribute('download', 'output.json');
+				dl.style.display = 'none';
+				document.body.appendChild(dl);
+				dl.click();
+				document.body.removeChild(dl);
+			});
+		}
+	</script>
+	<style>
+		.editor { border: solid black; }
+	</style>
+	</head>
+	<body onload="startup()">
+		<div class="editor" id="editorjs"></div>
+		<div class="functions"><button onclick="save()">Save</button></div>
+	</body>
+</html>
